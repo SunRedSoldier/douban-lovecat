@@ -1,0 +1,62 @@
+body {
+    font-weight: 400;
+    padding-top: 70px;
+}
+
+/* nav样式 */
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar {
+    border-width: thin;
+    -webkit-transition: .2s;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: white;
+}
+.navbar a {
+    color: black;
+}
+
+.navbar-header .icon-bar {
+    background-color: #000000;
+}
+
+.nav-logo {
+    float: left;
+    padding: 8px 0px;
+}
+.nav > li > a {
+    font-size: 16px;
+    padding: 12px 12px 10px;
+}
+
+.nav > li > a:hover {
+    background-color: transparent;
+    color: #E46E2E;
+}
+
+.nav > li > a:focus {
+    background-color: white;
+}
+
+.nav > li > a:active {
+    background-color: #F8F8F8;
+}
+
+.nav > li > a:visited {
+    background-color: #F8F8F8;
+}
+
+/* nav样式end */
+
+
+.table > a,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color:inherit;
+}
+.table > td {
+    border-style:dashed; 
+    border-width:1px;
+}
