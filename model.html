@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!--  Bootstrap-switch 核心 CSS 文件 -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css"
+integrity="sha256-sj3qkRTZIL8Kff5fST1TX0EF9lEmSfFgjNvuiw2CV5w=" crossorigin="anonymous" />
+
+<!-- Modal -->
+<div class="modal fade" id="updateKeyModal" tabindex="-1" role="dialog" aria-labelledby="updateKeyModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="updateKeyModalLabel">修改关键词</h4>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-group">
+                <label for="key1" class="control-label">关键词1:</label>
+                <input type="text" class="form-control" id="key1">
+              </div>
+              <div class="form-group">
+                  <label for="key2" class="control-label">关键词2:</label>
+                  <input type="text" class="form-control" id="key2">
+              </div>
+              <div class="form-group">
+                  <label for="key3" class="control-label">关键词3:</label>
+                  <input type="text" class="form-control" id="key3">
+              </div>
+              <div class="form-group">
+                  <label for="key4" class="control-label">关键词4:</label>
+                  <input type="text" class="form-control" id="key14">
+              </div>
+              <div class="form-group" >
+                  <label for="rule" class="control-label" for="swi">关键词规则:</label>
+                  <input type="hidden" id="rule" name="rule" />
+                  
+                  <input type="checkbox" class="checkbox" id="swi" name="status"/>
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--  Bootstrap-switch 核心 JavaScript 文件 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"
+integrity="sha256-AKUJYz2DyEoZYHh2/+zPHm1tTdYb4cmG8HC2ydmTzM4=" crossorigin="anonymous"></script>
+
+<script src="https://sunredsoldier.github.io/douban-lovecat/js/model.js"></script>
+
+<script>
+  $('[name="status"]').bootstrapSwitch({
+    onText: "交集",  // 设置ON文本  
+    offText: "并集",  // 设置OFF文本
+    onColor: "success",  // 设置ON文本颜色     (info/success/warning/danger/primary)  
+    offColor: "info",  // 设置OFF文本颜色        (info/success/warning/danger/primary)  
+    size: "small",   // 设置控件大小,从小到大  (mini/small/normal/large)  
+    handleWidth: "28",//设置控件宽度
+    onSwitchChange: function (event, state) {
+      if (state == true) {
+        $('#rule').val(1);
+      } else {
+        $('#rule').val(0);
+      }
+    }
+
+  }) 
+</script>
