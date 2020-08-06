@@ -28,7 +28,7 @@ function qDBuser() {
         success : function(data) {
             data = data['data']
             var str = '';
-            var tips = '爱猫生活WxPusher订阅者(DB)，在数据库中的用户才会收到推送'
+            var tips = '爱猫澡盆WxPusher订阅者(DB)，在数据库中的用户才会收到推送'
             if(data != null){
                 $.each(data, function(key,value) {
                     if(key==0){
