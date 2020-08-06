@@ -20,7 +20,7 @@ function qDBuser() {
 
     $.ajax({
         type : "GET",
-        url : "http://120.79.187.63:5701/wxoption/qdbuser?table=users_cat",
+        url : "http://120.79.187.63:5701/wxoption/qdbuser?table=users_cat&appToken=lovecat",
         data : {
             //page:page
         },
@@ -73,7 +73,7 @@ function showText(col){
     if (confirm(msg)==true){
         $.ajax({
             type : "GET",
-            url : "http://120.79.187.63:5701/wxoption/deldbuser?uid="+uid,
+            url : "http://120.79.187.63:5701/wxoption/deldbuser?appToken=lovecat&uid="+uid,
             data : {
                 //page:page
             },
