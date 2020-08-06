@@ -29,8 +29,8 @@ function qWXuser(){
             var str = '';
             records  = data.data.records
             var i = 0
-            total = data.data.total+1
-            var tips = '爱猫生活WxPusher订阅者(WX)';
+            total = data.data.total
+            var tips = '爱猫澡盆WxPusher订阅者(WX)';
             if (total != 0){
                 
                 $.each(records , function(key,value) {
