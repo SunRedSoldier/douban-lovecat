@@ -73,7 +73,7 @@ function showText(col){
     if (confirm(msg)==true){
         $.ajax({
             type : "GET",
-            url : "http://120.79.187.63:5701/wxoption/deldbuser?uid="+uid,
+            url : "http://120.79.187.63:5701/wxoption/deldbuser?appToken=catpen&uid="+uid,
             data : {
                 //page:page
             },
