@@ -20,7 +20,7 @@ function qDBuser() {
 
     $.ajax({
         type : "GET",
-        url : "http://120.79.187.63:5701/wxoption/qdbuser?table=users_cat&appToken=lovecat",
+        url : "http://120.79.187.63:5701/wxoption/qdbuser?appToken=lovecat",
         data : {
             //page:page
         },
