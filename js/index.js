@@ -2,7 +2,7 @@ function index() {
     // remerror()
     $.ajax({
         type : "GET",
-        url : "http://120.79.187.63:5701/catoption/topics",
+        url : "http://120.79.187.63:5701/catoption/topics?appToken=lovecat",
         data : {
             //page:page
         },
