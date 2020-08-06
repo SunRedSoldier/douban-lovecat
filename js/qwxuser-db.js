@@ -45,7 +45,7 @@ function qDBuser() {
                     }
 
                     str = '<tbody><tr>'
-                        +'<td class="text-center" style="vertical-align: middle;">'+(key+1)+'</td>'
+                        +'<td class="text-center" style="vertical-align: middle;">'+(data.length-i)+'</td>'
                         +'<td class="" style="vertical-align: middle;"><img src="'+value.userHeadImg+'" width="32" height="32" /></td>'
                         +'<td class="" id="uid'+(key+1)+'" style="vertical-align: middle;">'+value.uid+'</td>'
                         +'<td class="" id="userName'+(key+1)+'" style="vertical-align: middle;">'+value.userName+'</td>'
@@ -53,6 +53,7 @@ function qDBuser() {
                         +'<td class="" style="vertical-align: middle;"><button type="button" id="btn_del" class="btn btn-danger btn-sm" onclick="showText('+(key+1)+')">Delete</button></td>'
                         +'</tr></tbody>'
                     $('#table').append(str);
+                    i+=1
                 });
             }else{
                 var str = '<div id="error" class="form-group text-center"><h1 style="color:#000000;">暂无数据</h1></div>';
