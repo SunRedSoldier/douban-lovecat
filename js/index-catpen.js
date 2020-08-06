@@ -11,7 +11,7 @@ function index() {
             data = data['data']
             var str = '';
             var i = 0
-            var tips = '爱猫生活小组今日帖子';
+            var tips = '爱猫澡盆小组今日帖子';
             if (data != null){
                 $.each(data, function(key,value) {
                     if(key==0){
