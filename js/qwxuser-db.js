@@ -29,6 +29,7 @@ function qDBuser() {
             data = data['data']
             var str = '';
             var tips = '爱猫生活WxPusher订阅者(DB)，在数据库中的用户才会收到推送'
+            var i = 0
             if(data != null){
                 $.each(data, function(key,value) {
                     if(key==0){
@@ -53,7 +54,7 @@ function qDBuser() {
                         +'<td class="" style="vertical-align: middle;"><button type="button" id="btn_del" class="btn btn-danger btn-sm" onclick="showText('+(key+1)+')">Delete</button></td>'
                         +'</tr></tbody>'
                     $('#table').append(str);
-                    i+=1
+                    i += 1
                 });
             }else{
                 var str = '<div id="error" class="form-group text-center"><h1 style="color:#000000;">暂无数据</h1></div>';
