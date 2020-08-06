@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LoveCat</title>
+    <meta name="keywords" content="爱猫生活,豆瓣小组">
+    <meta name="description" content="查看公众号中的订阅者">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/cotton/100/000000/cat--v2.png" />
+    <!--  Bootstrap-v3 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--  Bootstrap-switch 核心 CSS 文件 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css"
+        integrity="sha256-sj3qkRTZIL8Kff5fST1TX0EF9lEmSfFgjNvuiw2CV5w=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+
+<body>
+    <!-- 顶部导航 -->
+    <nav class="navbar navbar-fixed-top" role="navigation" id="navbar">
+        <div class="container-fluid">
+            <div class="nav-logo">
+                <img id="logo" onclick="window.location.href='#';" width="50px" height="50px"
+                    class="navbar-logo" src="https://img.icons8.com/cotton/64/000000/cat--v2.png" alt="logo">
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html" class="tab">爱猫生活</a>
+                    </li>
+                    <li>
+                        <a href="index-catpen.html" class="tab">爱猫澡盆</a>
+                    </li>
+                    
+                    <li>
+                        <a href="qwxuser-db.html" class="tab">查看爱猫生活订阅(DB)</a>
+                    </li>
+                    <li>
+                        <a href="qwxuser-wx.html" class="tab">查看爱猫生活订阅(WX)</a>
+                    </li>
+                    
+                    <li>
+                        <a href="qwxuser-catpen-db.html" class="tab">查看爱猫澡盆订阅(DB)</a>
+                    </li>
+                    <li>
+                        <a href="qwxuser-catpen-wx.html" class="tab">查看爱猫澡盆订阅(WX)</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#updateKeyModal" class="tab">修改关键词</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#pushStatusModal" class="tab">推送通道</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Table -->
+    <table class="table table-hover" id="table">
+
+    </table>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="updateKeyModal" tabindex="-1" role="dialog" aria-labelledby="updateKeyModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="updateKeyModalLabel">修改关键词</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="key1" class="control-label">关键词1:</label>
+                            <input type="text" class="form-control" id="key1">
+                        </div>
+                        <div class="form-group">
+                            <label for="key2" class="control-label">关键词2:</label>
+                            <input type="text" class="form-control" id="key2">
+                        </div>
+                        <div class="form-group">
+                            <label for="key3" class="control-label">关键词3:</label>
+                            <input type="text" class="form-control" id="key3">
+                        </div>
+                        <div class="form-group">
+                            <label for="key4" class="control-label">关键词4:</label>
+                            <input type="text" class="form-control" id="key4">
+                        </div>
+                        <div class="form-group">
+                            <label for="rule" class="control-label" for="swi">关键词规则:</label>
+                            <input type="hidden" id="rule" name="rule" />
+
+                            <input type="checkbox" class="checkbox" id="swi" name="status" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveKeyBtn" onclick="updateKey()" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pushStatusModal -->
+    <div class="modal fade" id="pushStatusModal" tabindex="-1" role="dialog" aria-labelledby="pushStatusModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="pushStatusModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="status_qq" class="control-label col-xs-6 col-sm-6 col-md-6 text-right">QQ群(660605003):</label>
+                            <input type="hidden" name="status-qq">
+                            <input type="checkbox" class="checkbox col-xs-6 col-sm-6 col-md-6" id="status_qq" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="status_jsd" class="control-label col-xs-6 col-sm-6 col-md-6 text-right">即时达:</label>
+                            <input type="hidden" name="status-jsd">
+                            <input type="checkbox" class="checkbox col-xs-6 col-sm-6 col-md-6" id="status_jsd" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="status_wx" class="control-label col-xs-6 col-sm-6 col-md-6 text-right">WXPusher:</label>
+                            <input type="hidden" name="status-wx">
+                            <input type="checkbox" class="checkbox col-xs-6 col-sm-6 col-md-6" id="status_wx" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" id="saveKeyBtn" onclick="updatePushStatus()" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript脚本 -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <!--  Bootstrap-v3 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+
+    <script src="../js/qwxuser-catpen-wx.js"></script>
+    <!--  Bootstrap-switch 核心 JavaScript 文件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"
+        integrity="sha256-AKUJYz2DyEoZYHh2/+zPHm1tTdYb4cmG8HC2ydmTzM4=" crossorigin="anonymous"></script>
+
+    <script src="../js/model.js"></script>
+
+</body>
+
+</html>
