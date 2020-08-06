@@ -20,7 +20,7 @@ function qWXuser(){
 
     $.ajax({
         type : "GET",
-        url : "http://120.79.187.63:5701/wxoption/qwxuser",
+        url : "http://120.79.187.63:5701/wxoption/qwxuser?appToken=lovecat",
         data : {
             //page:page
         },
