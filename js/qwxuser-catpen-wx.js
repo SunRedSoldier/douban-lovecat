@@ -42,7 +42,7 @@ function qWXuser(){
                     if(key==0){
                         str = '<thead><tr bgcolor="#D9EDF7"><td colspan="6">'+tips+'</td></tr>'
                             +'<tr>'
-                            +'<th class="text-center">#'+total+'</th>'
+                            +'<th class="text-center">#'+(total+1)+'</th>'
                             +'<th class="">头像</th>'
                             +'<th class="">UID</th>'
                             +'<th class="">微信昵称</th>'
