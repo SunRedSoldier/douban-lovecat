@@ -52,7 +52,7 @@ function qWXuser(){
                         $('#table').append(str);
                     }
                     str = '<tbody><tr>'
-                        +'<td class="text-center" style="vertical-align: middle;">'+(total-i)+'</td>'
+                        +'<td class="text-center" style="vertical-align: middle;">'+(total-i+1)+'</td>'
                         +'<td class="" style="vertical-align: middle;"><img src="'+headImg+'" width="32" height="32" /></td>'
                         +'<td class="" style="vertical-align: middle;">'+uid+'</td>'
                         +'<td class="" style="vertical-align: middle;">'+nickName+'</td>'
