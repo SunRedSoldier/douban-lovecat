@@ -32,7 +32,7 @@
 
             <div class="input-group">
                 <div class="input-group-addon">UID:</div>
-                <input type="text" class="form-control" id="uid" placeholder="Amount">
+                <input type="text" class="form-control" id="uid" placeholder="请输入UID">
             </div>
         </div>
         <button type="button" onclick="querykeys()" data-toggle="modal" data-target="#updateKeyModal" class="btn btn-primary">查询</button>
@@ -51,6 +51,7 @@
                     <h4 class="modal-title" id="updateKeyModalLabel"></h4>
                 </div>
                 <div class="modal-body">
+                    <label class="control-label">输入多个字符用空格或半角字符,; 分隔</label>
                     <form>
                         <div class="form-group">
                             <label for="blockwords" class="control-label">屏蔽词组:</label>
