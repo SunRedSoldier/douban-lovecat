@@ -99,6 +99,7 @@
     }
 
     function querykeys() {
+        resetmodal();
         $("#updateKeyModalLabel").text("正在获取关键词...")
         var groupid = $('#selectgroup').selectpicker('val')
         var uid = $('#uid').val()
@@ -122,7 +123,6 @@
                     data: JSON.stringify({'uid': uid}),
                     dataType: "json",
                     success: function (data) {
-                        resetmodal();
                         ocmodal(false);
                         allkeys = data['data'];
                         restatus = data['status']
@@ -148,6 +148,8 @@
 
                     },
                     error: function (data) {
+                        resetmodal();
+                        ocmodal(true);
                         $("#updateKeyModalLabel").text("请求失败！");
                     }
                 });
@@ -185,9 +187,6 @@
                     data: JSON.stringify({"uid": uid, "data": d}),
                     dataType: "json",
                     success: function (data) {
-                        // resetmodal();
-                        // ocmodal(false);
-
                         code = data['code'];
                         msg = data['msg']
                         if (code == 200) {
