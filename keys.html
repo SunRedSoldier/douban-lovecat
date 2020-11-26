@@ -172,17 +172,17 @@
                         url = info[i][4]
                     }
                 }
-                var d = {'keys': {'keys1':$('#keys1').val(),
-                                'keys2':$('#keys2').val(),
-                            'keys3':$('#keys3').val(),
-                            'blockwords':$('#blockwords').val()
+                var d = {"keys": {"keys1":$('#keys1').val(),
+                                "keys2":$('#keys2').val(),
+                            "keys3":$('#keys3').val(),
+                            "blockwords":$('#blockwords').val()
                         }}
 
                 $.ajax({
                     type: "POST",
                     contentType: "application/json",
                     url: url,
-                    data: JSON.stringify({'uid': uid, 'data': d}),
+                    data: JSON.stringify({"uid": uid, "data": d}),
                     dataType: "json",
                     success: function (data) {
                         // resetmodal();
